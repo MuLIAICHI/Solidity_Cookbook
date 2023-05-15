@@ -9,17 +9,17 @@ Before you start writing Solidity contracts, you need to set up your development
    Solidity development typically relies on Node.js and npm (Node Package Manager). Install the latest version of Node.js from the [official website](https://nodejs.org/).
 
    You can verify the installation by running the following commands in your terminal:
-
-   ````bash
-   node -v
-   npm -v 
-   ```
+   
+```bash
+node -v
+npm -v 
+```
 
 #### 2. Install Truffle
 
 Truffle is a development framework for Ethereum that provides a suite of tools for writing smart contracts. You can install it globally using npm:
 
-```bash
+``` bash
 npm install -g truffle
 ```
 
