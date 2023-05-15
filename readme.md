@@ -19,7 +19,7 @@ Before you start writing Solidity contracts, you need to set up your development
 
 Truffle is a development framework for Ethereum that provides a suite of tools for writing smart contracts. You can install it globally using npm:
 
-```bash
+``` bash
 npm install -g truffle
 ```
 
