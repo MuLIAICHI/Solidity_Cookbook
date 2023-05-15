@@ -43,4 +43,53 @@ You can use any text editor for writing Solidity code, but [Visual Studio Code](
 
 Once you've installed these tools, you're ready to start developing in Solidity!
 
+## Understanding Solidity Variables and Types
+
+Solidity is a statically-typed language, which means the type of each variable needs to be specified at compile-time. Here are the common variable types in Solidity:
+
+- **Boolean**: The simplest type in Solidity. Can be `true` or `false`.
+    ```solidity
+    bool isReady = true;
+    ```
+
+- **Integer**: Signed and unsigned integers of various sizes. `uint` is an alias for `uint256`.
+    ```solidity
+    uint256 count = 123;
+    int8 smallNumber = -12;
+    ```
+
+- **Address**: Holds a 20 byte value (size of an Ethereum address).
+    ```solidity
+    address owner = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
+    ```
+
+- **Bytes**: Fixed-size byte arrays.
+    ```solidity
+    bytes32 id = "123abc";
+    ```
+
+- **String**: Dynamic-sized string. Strings are stored in UTF-8 format.
+    ```solidity
+    string name = "Alice";
+    ```
+
+- **Array**: A collection of elements of a particular type.
+    ```solidity
+    uint[] numbers = [1, 2, 3];
+    ```
+
+- **Mapping**: Hash table with key-value pairs.
+    ```solidity
+    mapping(address => uint) public balances;
+    ```
+
+- **Struct**: Define new types with multiple members.
+    ```solidity
+    struct Person {
+        string name;
+        uint age;
+    }
+    ```
+
+Please note that Solidity also has `enum` and `tuple` types. We'll cover more advanced types and usage in later sections.
 
