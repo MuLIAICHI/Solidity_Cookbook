@@ -93,3 +93,73 @@ Solidity is a statically-typed language, which means the type of each variable n
 
 Please note that Solidity also has `enum` and `tuple` types. We'll cover more advanced types and usage in later sections.
 
+## Introduction to Solidity functions
+
+Solidity is a programming language commonly used for developing smart contracts on the Ethereum blockchain. Functions play a crucial role in Solidity, allowing developers to define the behavior and actions that can be performed within a smart contract.
+
+#### Function Structure
+
+In Solidity, functions are defined using the function keyword, followed by the function name and optional parameters enclosed in parentheses. The function body is enclosed in curly braces {}.
+
+Here's an example of a simple Solidity function:
+
+```solidity
+
+function sayHello() public pure returns (string memory) {
+    return "Hello, World!";
+}
+
+```
+
+In this example, sayHello is the function name. The public keyword indicates that the function can be accessed by other contracts or externally. The pure keyword specifies that the function does not modify the contract's state.
+
+### Function Parameters
+
+Functions can accept input parameters, allowing developers to pass data to the function for processing. Parameters are declared inside the parentheses after the function name. Each parameter consists of a type and a name, separated by a space.
+
+Here's an example of a function with parameters:
+
+```solidity
+
+function addNumbers(uint a, uint b) public pure returns (uint) {
+    return a + b;
+}
+```
+
+In this example, the function addNumbers takes two parameters: a and b, both of type uint (unsigned integer). The function body performs the addition operation and returns the result.
+
+### Function Modifiers
+
+Solidity provides modifiers, which are special keywords that can be used to alter the behavior of a function. Modifiers are placed before the function definition and are prefixed with the modifier keyword.
+
+Here's an example of a function with a modifier:
+
+```solidity
+
+modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+}
+
+function changeName(string memory newName) public onlyOwner {
+    name = newName;
+}
+```
+
+In this example, the onlyOwner modifier is defined to restrict access to the changeName function. The modifier checks whether the msg.sender is the owner of the contract. If the condition is satisfied, the function is executed using the _; placeholder.
+
+### Function Return Values
+
+Functions in Solidity can also return values. The return type is specified after the parameter list and before the opening curly brace of the function body. Multiple return values can be defined by separating them with commas.
+
+Here's an example of a function with a return value:
+
+```solidity
+
+function divide(uint dividend, uint divisor) public pure returns (uint quotient, uint remainder) {
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+}
+```
+
+In this example, the divide function takes two parameters and returns two values: the quotient and the remainder of the division operation.
