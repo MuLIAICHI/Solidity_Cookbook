@@ -163,3 +163,42 @@ function divide(uint dividend, uint divisor) public pure returns (uint quotient,
 ```
 
 In this example, the divide function takes two parameters and returns two values: the quotient and the remainder of the division operation.
+
+## Writing Your First Contract
+
+To get started with Solidity, you'll begin by defining your first contract. A Solidity contract is the fundamental building block of Ethereum smart contracts. It contains the code and data that define the behavior and state of the contract.
+
+### Defining a Solidity Contract
+
+To define a Solidity contract, follow these steps:
+
+1. Open your preferred code editor and create a new file with a `.sol` extension (e.g., `MyContract.sol`).
+
+2. Start by specifying the version of Solidity you intend to use. This is important as it ensures compatibility with the compiler and future updates. For example, you can specify Solidity `version 0.8.4` by adding the following line at the beginning of your contract:
+
+```solidity
+pragma solidity ^0.8.4;
+```
+
+3. Define the contract itself using the contract keyword followed by the contract name. For instance, let's name our contract MyContract:
+
+```solidity
+contract MyContract {
+    // Contract code and variables go here
+}
+```
+3. Within the contract, you can define variables, functions, and other elements that make up the contract's logic. Here's an example of a contract with a state variable and a function:
+
+```solidity
+contract MyContract {
+    uint public myNumber;
+
+    function setNumber(uint _number) public {
+        myNumber = _number;
+    }
+}
+```
+In the example above, we define a state variable myNumber of type uint (unsigned integer). We also define a function setNumber that takes an input _number and assigns it to myNumber.
+
+5. Save the file with the `.sol` extension.
+
