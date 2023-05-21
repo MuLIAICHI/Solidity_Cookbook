@@ -213,7 +213,7 @@ Inside the constructor function, perform any necessary initialization logic for 
 
 Here's an example of a simple contract with a constructor function:
 
-``solidity
+```solidity
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -224,7 +224,8 @@ contract MyContract {
     constructor(uint256 _initialNumber) {
         myNumber = _initialNumber;
     }
-}``
+}
+```
 
 In the above example, we have a contract called MyContract with a state variable myNumber. The constructor function takes an initial number as a parameter and assigns it to the myNumber variable.
 
