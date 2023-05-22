@@ -240,3 +240,60 @@ For example, after deploying MyContract with an initial number of 10, you can ac
 
 Remember to handle error cases and consider gas costs when interacting with contracts on the Ethereum network.
 
+## Advanced Solidity Concepts
+
+### Control structures in Solidity
+
+Control structures in Solidity allow you to control the flow of execution in your smart contracts. Some commonly used control structures include:
+
+- `if` statements: Used to execute a block of code if a certain condition is true.
+
+```solidity
+if (condition) {
+    // code to be executed if the condition is true
+} 
+```
+
+- `for` loops: Used to repeat a block of code a specific number of times:
+
+```solidity
+for (uint i = 0; i < limit; i++) {
+    // code to be executed in each iteration
+}
+```
+
+- `while`  loops: Used to repeat a block of code as long as a certain condition is true.
+
+```solidity
+while (condition) {
+    // code to be executed as long as the condition is true
+}
+```
+- `do-while`  loops: Similar to `while` loops, but the code block is executed at least once before checking the condition.
+
+```solidity
+do {
+    // code to be executed at least once
+} while (condition);
+
+```
+
+### Inheritance in Solidity
+
+Inheritance allows you to create a contract that inherits properties and functions from another contract. This enables code reuse and modularity in your smart contracts. In Solidity, you can inherit from a single contract using the `is` keyword.
+
+```solidity
+contract BaseContract {
+    // base contract implementation
+}
+
+contract DerivedContract is BaseContract {
+    // derived contract implementation
+} 
+```
+
+The `DerivedContract` inherits all the properties and functions from `BaseContract` and can also define its own additional functionality.
+
+Inheritance can be useful when you want to create specialized contracts that extend the functionality of a base contract, or when you want to define common functionalities in a base contract and reuse them in multiple derived contracts.
+
+It's important to note that Solidity supports multiple inheritance, allowing a contract to inherit from multiple base contracts. However, multiple inheritance can introduce complexity and potential conflicts, so it's crucial to carefully design your contracts to avoid these issues.
