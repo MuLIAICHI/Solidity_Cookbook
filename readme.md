@@ -333,3 +333,96 @@ When using libraries, it's important to note that:
 - Libraries cannot inherit or be inherited from.
 - Libraries cannot receive Ether or make external calls (until Solidity 0.8.0, where libraries can call other contracts using the `external` keyword).
 
+## Solidity Security Best Practices
+When writing smart contracts in Solidity, it's crucial to consider security to protect your contracts and the funds they manage. Here are some common attacks and best practices to prevent them:
+
+### Reentrancy Attacks
+
+Reentrancy attacks occur when a contract calls an external contract, and that external contract can make a callback to the calling contract before the initial call completes. This can lead to unexpected behavior and potential security vulnerabilities.
+
+To prevent reentrancy attacks, you can use the "checks-effects-interactions" pattern. In this pattern, you perform all state changes and effects before making any external calls.
+
+```solidity
+contract ReentrancyExample {
+    mapping(address => uint256) private balances;
+
+    function withdraw(uint256 amount) public {
+        require(balances[msg.sender] >= amount);
+
+        // Effects
+        balances[msg.sender] -= amount;
+
+        // Interactions
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+    }
+}
+```
+### Integer Overflow and Underflow
+
+Solidity does not automatically check for integer overflow and underflow, which can lead to unexpected behavior and potential vulnerabilities. It's crucial to handle arithmetic operations carefully and prevent such issues.
+
+You can use the OpenZeppelin library's SafeMath to perform arithmetic operations safely:
+
+```solidity
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+contract IntegerOverflowExample {
+    using SafeMath for uint256;
+
+    function transferTokens(uint256 amount) public {
+        uint256 balance = 100;
+        require(amount <= balance);
+
+        // Perform safe subtraction
+        balance = balance.sub(amount);
+
+        // Perform safe addition
+        balance = balance.add(amount);
+    }
+}
+```
+
+### Access Control
+
+Proper access control mechanisms are essential to prevent unauthorized access and ensure that only authorized users can execute specific functions or access certain data.
+
+```solidity
+contract AccessControlExample {
+    address private owner;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not authorized");
+        _;
+    }
+
+    function changeOwner(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+}
+```
+In the above example, the onlyOwner modifier ensures that only the contract owner can execute the changeOwner function.
+
+### Gas Limit and Loops
+Solidity imposes a maximum gas limit per block, and exceeding this limit will cause the contract execution to fail. Therefore, it's crucial to avoid expensive operations and infinite loops.
+
+```solidity
+contract GasLimitExample {
+    uint256[] private data;
+
+    function processArray() public {
+        // Ensure the array length is within the gas limit
+        require(data.length <= 256);
+
+        // Process the array
+        for (uint256 i = 0; i < data.length; i++) {
+            // Perform operations on each element
+        }
+    }
+}
+```
+In the above example, we check the array length before processing it to ensure it does not exceed the gas limit.
+
+These are just a few examples of Solidity security best practices. It's important to stay updated on the latest security guidelines and audit your contracts thoroughly before deploying them to the Ethereum network.
+
+Remember, security is an ongoing process, and you should continually assess and improve the security measures of your smart contracts.
