@@ -426,3 +426,79 @@ In the above example, we check the array length before processing it to ensure i
 These are just a few examples of Solidity security best practices. It's important to stay updated on the latest security guidelines and audit your contracts thoroughly before deploying them to the Ethereum network.
 
 Remember, security is an ongoing process, and you should continually assess and improve the security measures of your smart contracts.
+
+### Testing Contracts
+Writing tests for your Solidity contracts is crucial to ensure their security and functionality. The following example demonstrates how to use the Solidity testing framework Truffle to write unit tests for a contract:
+```solidity
+// MyContract.sol
+pragma solidity ^0.8.0;
+
+contract MyContract {
+  uint256 public myNumber;
+
+  function setNumber(uint256 _number) public {
+    myNumber = _number;
+  }
+}
+```
+```javaScript
+// MyContract.test.js
+const MyContract = artifacts.require('MyContract');
+
+contract('MyContract', (accounts) => {
+  it('should set the number correctly', async () => {
+    const myContract = await MyContract.new();
+    const numberToSet = 42;
+
+    await myContract.setNumber(numberToSet);
+
+    const result = await myContract.myNumber();
+    assert.equal(result, numberToSet, 'Number not set correctly');
+  });
+});
+```
+
+### Understanding Gas and Optimizing Contracts
+Understanding gas usage is crucial for optimizing your Solidity contracts and minimizing transaction costs. Here are some tips for gas optimization:
+
+- Use the view and pure keywords for functions that do not modify the contract's state or read external state.
+- Minimize storage reads and writes to reduce gas costs.
+- Avoid unnecessary loops and iterations, especially when dealing with large arrays.
+- Use fixed-size types when possible, as they are generally more gas-efficient than dynamic-sized types.
+
+Here's an example demonstrating gas optimization techniques:
+```solidity
+pragma solidity ^0.8.0;
+
+contract GasOptimizationExample {
+  uint256[] public numbers;
+
+  function addNumbers(uint256[] memory _newNumbers) public {
+    for (uint256 i = 0; i < _newNumbers.length; i++) {
+      numbers.push(_newNumbers[i]);
+    }
+  }
+}
+```
+In the example above, pushing elements into the numbers array inside a loop can be gas-consuming, especially if the array grows large. To optimize gas usage, consider using a mapping instead:
+
+```solidity
+contract GasLimitExample {
+    uint256[] private data;
+
+    function processArray() public {
+        // Ensure the array length is within the gas limit
+        require(data.length <= 256);
+
+        // Process the array
+        for (uint256 i = 0; i < data.length; i++) {
+            // Perform operations on each element
+        }
+    }
+}
+```
+By using a mapping, you avoid duplicating numbers in the storage, resulting in lower gas costs.
+
+Remember that gas optimization often involves trade-offs between readability, complexity, and efficiency. It's essential to benchmark and test your contract to ensure that the optimizations do not introduce unintended behaviors or security vulnerabilities.
+
+These examples provide a brief introduction to Solidity security best practices, testing, and gas optimization. For more comprehensive guidance, it's recommended to consult resources like [Solidity documentation](https://docs.soliditylang.org/en/v0.8.20/) and community forums to stay updated on the latest practices and patterns.
