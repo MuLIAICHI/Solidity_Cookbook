@@ -1,3 +1,5 @@
+Welcome to the Solidity Cookbook! This repository provides a comprehensive guide to developing smart contracts using Solidity, a statically-typed programming language for the Ethereum blockchain. Whether you're a beginner getting started with Solidity or an experienced developer looking to expand your skills, this cookbook has got you covered.
+
 ## Getting Started
 - [Setting up your Solidity development environment](#setting-up-your-solidity-development-environment)
 - [Understanding Solidity variables and types](#understanding-solidity-variables-and-types)
