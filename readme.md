@@ -37,10 +37,6 @@ Welcome to the Solidity Cookbook! This repository provides a comprehensive guide
 - [Building a decentralized exchange](#building-a-decentralized-exchange)
 - [Creating a multi-signature wallet](#creating-a-multi-signature-wallet)
 
-## Interacting with Contracts from Web3
-- [Setting up a Web3 environment](#setting-up-a-web3-environment)
-- [Calling contract functions from Web3](#calling-contract-functions-from-web3)
-- [Listening to contract events](#listening-to-contract-events)
 
 ## Getting Started
 
