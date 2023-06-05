@@ -1,4 +1,46 @@
 ## Getting Started
+- [Setting up your Solidity development environment](#setting-up-your-solidity-development-environment)
+- [Understanding Solidity variables and types](#understanding-solidity-variables-and-types)
+- [Introduction to Solidity functions](#introduction-to-solidity-functions)
+
+## Writing Your First Contract
+- [Defining a Solidity contract](#defining-a-solidity-contract)
+- [Solidity constructor function](#solidity-constructor-function)
+- [Deploying and interacting with your contract](#deploying-and-interacting-with-your-contract)
+
+## Advanced Solidity Concepts
+- [Control structures in Solidity](#control-structures-in-solidity)
+- [Inheritance in Solidity](#inheritance-in-solidity)
+- [Solidity interfaces and abstract contracts](#solidity-interfaces-and-abstract-contracts)
+- [Libraries in Solidity](#libraries-in-solidity)
+
+## Solidity Security Best Practices
+- [Understanding common attacks and how to prevent them](#understanding-common-attacks-and-how-to-prevent-them)
+- [The importance of testing and how to write tests for your contracts](#the-importance-of-testing-and-how-to-write-tests-for-your-contracts)
+- [Understanding gas and how to optimize your contracts](#understanding-gas-and-how-to-optimize-your-contracts)
+
+## Solidity Tools and Frameworks
+- [Introduction to the Truffle Framework](#introduction-to-the-truffle-framework)
+- [Using Remix for Solidity development](#using-remix-for-solidity-development)
+- [Deploying contracts with Hardhat](#deploying-contracts-with-hardhat)
+- [Testing contracts with Ganache](#testing-contracts-with-ganache)
+
+## Interacting with the Ethereum Network
+- [Understanding Ethereum accounts](#understanding-ethereum-accounts)
+- [Sending Ether from contracts](#sending-ether-from-contracts)
+- [Calling contract functions](#calling-contract-functions)
+
+## Advanced Contract Examples
+- [Implementing an ERC20 token](#implementing-an-erc20-token)
+- [Building a decentralized exchange](#building-a-decentralized-exchange)
+- [Creating a multi-signature wallet](#creating-a-multi-signature-wallet)
+
+## Interacting with Contracts from Web3
+- [Setting up a Web3 environment](#setting-up-a-web3-environment)
+- [Calling contract functions from Web3](#calling-contract-functions-from-web3)
+- [Listening to contract events](#listening-to-contract-events)
+
+## Getting Started
 
 ### Setting up your Solidity development environment
 
