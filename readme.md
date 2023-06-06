@@ -1,7 +1,6 @@
-<p align="center">
+<p text-align="center">
   <h1>Solidity Cookbook</h1>
 </p>
-
 ![Project Image](solidity-cookbook-image.png)
 
 Welcome to the Solidity Cookbook! This repository provides a comprehensive guide to developing smart contracts using Solidity, a statically-typed programming language for the Ethereum blockchain. Whether you're a beginner getting started with Solidity or an experienced developer looking to expand your skills, this cookbook has got you covered.
