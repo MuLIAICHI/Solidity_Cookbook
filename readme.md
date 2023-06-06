@@ -24,15 +24,3 @@ Understand the fundamentals of interacting with the Ethereum network. Explore Et
 
 ## [Advanced Contract Examples](Advanced%20Contract%20Examples/README.md)
 In this section, you'll find advanced contract examples that showcase the power and versatility of Solidity. Implement an ERC20 token, build a decentralized exchange, and create a multi-signature wallet.
-
-## [Interacting with Contracts from Web3](Interacting%20with%20Contracts%20from%20Web3/README.md)
-Understand how to set up a Web3 environment, call contract functions from Web3, and listen to contract events.
-
-## [Solidity and Upgradability](Solidity%20and%20Upgradability/README.md)
-Learn about the importance of contract upgradability and how to create upgradeable contracts using OpenZeppelin.
-
-## [Solidity and DeFi](Solidity%20and%20DeFi/README.md)
-Explore the intersection of Solidity and Decentralized Finance (DeFi). Learn about DeFi concepts and build lending protocols and yield farming contracts in Solidity.
-
-## [Next Steps](Next%20Steps/README.md)
-Discover how to stay up to date with Solidity development and find additional resources for further learning.
