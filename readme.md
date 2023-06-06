@@ -1,4 +1,6 @@
-# Solidity Cookbook
+<p align="center">
+  <h1>Solidity Cookbook</h1>
+</p>
 
 ![Project Image](solidity-cookbook-image.png)
 
